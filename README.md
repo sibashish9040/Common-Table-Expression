@@ -9,6 +9,8 @@ This repository demonstrates how to use **Common Table Expressions (CTEs)** in S
   - Retrieving the last order date per customer
   - Ranking customers based on total sales
   - Displaying hierarchical employee structures with recursion
+- `init-sqlserver-salesdb.sql`: contains the database init:
+  - Contains table like Customer, Order, Employee etc. 
 
 ---
 
@@ -23,3 +25,22 @@ This repository demonstrates how to use **Common Table Expressions (CTEs)** in S
        -- Query definition
    )
    SELECT * FROM CTE_Name;
+## ✅ Benefits of Using CTEs
+
+- Improved **readability** and **structure**
+- Avoids creating **temporary tables**
+- Makes **recursive queries** possible 
+- Encourages **modular** query writing
+
+---
+
+## 🔧 Syntax
+
+```sql
+WITH CTE_Name AS (
+    -- Anchor member or non-recursive base query, this won't be included inside the loop
+    SELECT ...
+    FROM CTE_NAME -- this will be the pert to be in loop
+    Break condition
+)
+SELECT * FROM CTE_Name;
